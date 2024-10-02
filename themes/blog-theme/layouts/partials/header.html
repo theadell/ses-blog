@@ -13,8 +13,11 @@
       <ul class="nav-list">
 
         <li class="nav-item">
-          <a href="/notes" class="nav-link {{ if eq .RelPermalink "/notes/" }}active{{ end }}">notes</a>
+          <a href="/calendar" class="nav-link {{ if eq .RelPermalink "/calendar/" }}active{{ end }}">calendar</a>
         </li>
+        <li class="nav-item">
+          <a href="/notes" class="nav-link {{ if eq .RelPermalink "/notes/" }}active{{ end }}">notes</a>
+
         <!-- 
         <li class="nav-item">
           <a href="/projects" class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}">Projects</a>

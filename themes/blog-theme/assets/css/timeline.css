@@ -254,3 +254,7 @@
 .timeline-body h6 {
     font-size: 1rem;
 }
+
+.calendar-container {
+    width: 900px;
+  }
