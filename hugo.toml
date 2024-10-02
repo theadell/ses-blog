@@ -1,4 +1,4 @@
-baseURL = 'https://ses.adelhub.com/'
+baseURL = 'https://ese.adelhub.com/'
 languageCode = 'en-us'
 title = 'ESE | class 24'
 theme = 'blog-theme'
