@@ -1,0 +1,60 @@
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title> {{ .Title }}</title>
+
+    <script>
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (currentTheme !== savedTheme) {
+            localStorage.setItem('theme', savedTheme);
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            const themeIcon = document.getElementById('theme-icon');
+            if (themeIcon) {
+                themeIcon.className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            }
+        }
+    </script>
+
+    {{ $CSS := resources.Match "css/**.css" | resources.Concat "main.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $CSS.RelPermalink }}" media="all">
+    
+    <link href="/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="{{ " favicon.svg" | relURL }}">
+
+    <!-- Open Graph meta tags -->
+    {{- if .IsHome -}}
+    <meta property="og:title" content="Embedded Systems Engineering | class 24 ">
+    <meta property="og:description"
+        content="Students website for the masters degree Embedded Systems Engineering at Fachhochschule Dortmund">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ " /images/preview.png" | absURL }}">
+    {{- else if .IsPage -}}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}Embedded Systems Engineering | class 24{{ end }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{- if .File -}}
+    {{ $imagePath := printf "/images/%s/preview.jpg" .File.BaseFileName }}
+    {{- if fileExists (printf "static%s" $imagePath) -}}
+    <meta property="og:image" content="{{ $imagePath | absURL }}">
+    {{- else -}}
+    <meta property="og:image" content="{{ " /images/preview.png" | absURL }}">
+    {{- end -}}
+    {{- else -}}
+    <meta property="og:image" content="{{ " /images/preview.png" | absURL }}">
+    {{- end -}}
+    {{- else -}}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description"
+        content="{{ with .Description }}{{ . }}{{ else }}Default description for posts.{{ end }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ " /images/preview.png" | absURL }}">
+    {{ end }}
+</head>

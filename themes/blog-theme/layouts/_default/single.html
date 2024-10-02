@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="article" aria-labelledby="article__title">
+  <header class="article__header">
+    <h2 id="article__title" class="article__title">{{ .Title }}</h2>
+    <p class="article__description">{{ .Description }}</p>
+  </header>
+
+  <div class="article__meta-tags">
+    <div class="article__meta">
+      <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span>·</span>
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+    <span>-</span>
+
+    <div class="article__tags" aria-label="Article Tags">
+      {{ with .Params.tags }}
+      {{ range . }}
+      <a href="{{"tags/" | relLangURL }}{{ . | urlize }}" class="article__tag">#{{ . }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  <section class="article__content">
+    {{ .Content }}
+  </section>
+
+  <footer class="article__footer">
+    <p><a href="/" class="article__back-link">← Back to Home</a></p>
+    <script src="https://utteranc.es/client.js"
+        repo="theadell/blog-utterances"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  </footer>
+</article>
+
+{{ $js := resources.Get "js/copy-code.js" | minify }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ end }}

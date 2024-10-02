@@ -1,0 +1,256 @@
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-left: 2px solid var(--color-border); 
+}
+
+.timeline-title {
+    margin-top: 2rem;
+}
+.timeline-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.timeline-header h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+.timeline-header p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+}
+
+/* Timeline entry */
+.timeline-entry {
+    position: relative;
+    padding: 1rem 0;
+    padding-left: 2.5rem;
+}
+
+.timeline-entry:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+/* Timeline marker (dot) */
+.timeline-marker {
+    position: absolute;
+    left: -8px;
+    top: 1.2rem;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    border: 2px solid var(--color-surface);
+}
+
+/* Timeline content */
+.timeline-content {
+    padding-left: 1rem;
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    color: var(--color-text);
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+.timeline-tag {
+    display: inline-block;
+    background-color: var(--color-link);
+    color: var(--color-background);
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.timeline-body p {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+/* Headings */
+.timeline-body h1,
+.timeline-body h2,
+.timeline-body h3,
+.timeline-body h4,
+.timeline-body h5,
+.timeline-body h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Unordered and Ordered Lists */
+.timeline-body ul,
+.timeline-body ol {
+    margin: 0 0 1rem 1.5rem;
+    padding: 0;
+}
+
+.timeline-body ul {
+    list-style-type: disc; /* Or circle, square, etc. */
+}
+
+.timeline-body ol {
+    list-style-type: decimal; /* Or lower-alpha, upper-roman, etc. */
+}
+
+.timeline-body li {
+    margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+.timeline-body blockquote {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid var(--color-border);
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Code Blocks */
+.timeline-body pre {
+    background-color: var(--color-surface);
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.timeline-body code {
+    background-color: var(--color-surface);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+    color: var(--color-primary);
+}
+
+/* Horizontal Rule */
+.timeline-body hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+}
+
+/* Images */
+.timeline-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+/* Tables */
+.timeline-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.timeline-body th,
+.timeline-body td {
+    border: 1px solid var(--color-border);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.timeline-body th {
+    background-color: var(--color-surface);
+    font-weight: bold;
+}
+
+/* Links */
+.timeline-body a {
+    color: var(--color-link);
+    text-decoration: underline;
+}
+
+.timeline-body a:hover {
+    text-decoration: none;
+}
+
+/* Adjustments for nested lists */
+.timeline-body ul ul,
+.timeline-body ol ul,
+.timeline-body ul ol,
+.timeline-body ol ol {
+    margin-left: 1.5rem;
+}
+
+/* Styling strong and em text */
+.timeline-body strong {
+    font-weight: bold;
+}
+
+.timeline-body em {
+    font-style: italic;
+}
+
+/* Line breaks */
+.timeline-body br {
+    line-height: 2rem;
+}
+
+.timeline-body ul,
+.timeline-body ol {
+    list-style-position: outside;
+}
+
+.timeline-body h1,
+.timeline-body h2,
+.timeline-body h3,
+.timeline-body h4,
+.timeline-body h5,
+.timeline-body h6 {
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* Specific font sizes for each heading level */
+.timeline-body h1 {
+    font-size: 1.5rem; /* Adjust as needed */
+}
+
+.timeline-body h2 {
+    font-size: 1.4rem;
+}
+
+.timeline-body h3 {
+    font-size: 1.3rem;
+}
+
+.timeline-body h4 {
+    font-size: 1.2rem;
+}
+.timeline-content h4 {
+    margin-top: 0.5rem;
+}
+
+.timeline-body h5 {
+    font-size: 1.1rem;
+}
+
+.timeline-body h6 {
+    font-size: 1rem;
+}

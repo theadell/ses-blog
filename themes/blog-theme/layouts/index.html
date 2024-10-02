@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+  
+<section >
+  <h3 class="timeline-title" >Timeline</h3>
+  <div class="timeline">
+  {{ range (where .Site.RegularPages "Section" "timeline").ByDate.Reverse }}
+  <div class="timeline-entry">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+          <span class="timeline-date">{{ .Date.Format "January 2, 2006" }}</span>
+          <div class="timeline-tag">{{ .Params.class }}</div> <!-- Display Class or Topic Tag -->
+          <h4>{{ .Title }}</h4>
+          <div class="timeline-body">
+            {{ .RawContent | markdownify }} 
+        </div>
+  </div>
+  </div>
+  {{ else }}
+      <p>No entries found in the timeline section.</p>
+  {{ end }}
+</div>
+
+</section>
+
+
+
+
+
+{{ end }}
