@@ -1,0 +1,41 @@
+name: Content Notification to Discord
+
+on:
+  push:
+    branches:
+      - main           
+    paths:
+      - 'content/**'    
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{
+                "username": "Class Timeline Bot",
+                "embeds": [{
+                  "title": "📝 New Class Entry",
+                  "description": "A new entry has been added to today’s timeline. Check it out.",
+                  "url": "https://ese.adelhub.com",
+                  "color": 3447003,
+                  "fields": [
+                    {
+                      "name": "🔗 View the Timeline",
+                      "value": "[Check it out here](https://ese.adelhub.com)"
+                    },
+                    {
+                      "name": "📅 Date Added",
+                      "value": "'"$(date +'%Y-%m-%d %H:%M:%S')"'"
+                    }
+                  ]
+                }]
+              }' \
+          $DISCORD_WEBHOOK_URL
