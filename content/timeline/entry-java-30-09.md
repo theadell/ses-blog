@@ -1,9 +1,9 @@
----
++++
 title: "Java -  Prep4FHDo"
 date: 2024-09-30
 class: "java"
 author: "adel"
----
++++
 
 - **Capstone Project Introduced:**
   - **Topic:** *"Smart House: Simulation of Energy Supply and Consumption"*

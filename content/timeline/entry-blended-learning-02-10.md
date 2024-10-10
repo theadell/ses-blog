@@ -1,9 +1,9 @@
----
++++
 title: "Blended Learning in Excel & Presentation Techniques – Graded (Lec 1)"
 date: 2024-10-02
 class: "MOD1-E07"
 author: "Jürgen"
----
++++
 
 The Excel course consists of two parts:
 
