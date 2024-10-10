@@ -1,8 +1,8 @@
 +++
-title: "Mathematics for Signals & Controls (Lec 1)"
-date: 2024-10-07
-class: "MOD1-01"
-author: "Jürgen"
+title = "Mathematics for Signals & Controls (Lec 1)"
+date = 2024-10-07
+class = "MOD1-01"
+author = "Jürgen"
 +++
 
 Course consists of tests during the year and a final exam, which

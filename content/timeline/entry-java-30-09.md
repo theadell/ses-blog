@@ -1,8 +1,8 @@
 +++
-title: "Java -  Prep4FHDo"
-date: 2024-09-30
-class: "java"
-author: "adel"
+title = "Java - Prep4FHDo"
+date = 2024-09-30
+class = "java"
+author = "adel"
 +++
 
 - **Capstone Project Introduced:**
