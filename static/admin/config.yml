@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: theadell/blog 
+  repo: theadell/ses-blog 
   branch: main
   base_url: https://decap.adelhub.com
 
